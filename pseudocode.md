@@ -79,6 +79,43 @@ Contains a `id` incremented, and a `title` text/ varchar/ string
 
 ---
 
+## Models
+
+<br/>
+Some model classes will need to be created in order to create the tables we need in our database that contain the right columns and data types.
+
+```
+from django.db import models
+```
+
+### cuisine
+```
+class cuisine(models.Model):
+    title = models.CharField(max_length=30)
+```
+
+### category
+```
+class category(models.Model):
+    title = models.CharField(max_length=30)
+```
+
+### items
+```
+class item(models.Model):
+    title = models.CharField(max_length=30)
+    description = models.CharField(max_length=200)
+    price = models.FloatField()
+    spice_level = models.IntegerField()
+    cuisine = models.ForeignKey(cuisine,on_delete=models.PROTECT)
+    category = models.ForeignKey(category,on_delete=models.PROTECT)
+
+```
+
+---
+
+
+
 
 
 
