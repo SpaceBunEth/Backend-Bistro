@@ -39,7 +39,49 @@ Django python framework will allow us to create models/classes that will handle 
 
 Djando uses Models/ python classes that allow us to write db tables using python without writing out any sql. 
 
-After a table(s) is generated/ migrated into our Postgres db, our project.
+After a table(s) is generated/ migrated into our Postgres db.
+
+We will use Django's views file to write how we want to display/ or send data when it is called.
+
+A build in feature of Django is we can added data to our DB using a pre-built front-end that comes with admin privileges. Ex; We can set whats called a superuser with a username and password. Once a superuser is setup a user can then login as an admin and preform (C.R.U.D) on our DB.
+
+---
+
+## Requirement 1.
+
+### Table item
+
+Using the image provided. Our db table structure will end up looking like this.  A `item` will represent a dish/ food item, each item will need an `id` that increments every time an new item is added. `title` will be a string/ varchar data type. Same for `description`. `price` will be a float or decimal value to allow for accurate pricing of an item/dish.  `spice_level` is numeric ranging from a value of 1-5 in spiciness. 
+
+`cuisine_id` will be a foreign key that is linked to *cuisine table's id*
+
+`category_id` will be a foreign key that is linked to *category table's id*
+
+Django automatically adds '_id' to any foreign key that is added to a table's column.
+
+---
+
+### Table cuisine
+
+Contains a `id` incremented, and a `title` text/ varchar/ string
+
+---
+
+### Table category
+
+Contains a `id` incremented, and a `title` text/ varchar/ string
+
+---
+### Relationship status
+
+- `item` many to one `cuisine`
+- `item` many to one `category`
+
+---
+
+
+
+
 
 
 
