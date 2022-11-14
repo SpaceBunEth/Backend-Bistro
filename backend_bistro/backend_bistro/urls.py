@@ -1,3 +1,23 @@
+from django.urls import include, path
+from rest_framework import routers
+from menuitems import views
+
+router = routers.DefaultRouter()
+router.register(r'users', views.UserViewSet)
+router.register(r'groups', views.GroupViewSet)
+router.register(r'menu', views.DishViewSet)
+router.register(r'category', views.CategoryViewSet)
+router.register(r'cuisine', views.CuisineViewSet)
+
+# Wire up our API using automatic URL routing.
+# Additionally, we include login URLs for the browsable API.
+urlpatterns = [
+    path('', include(router.urls)),
+    path('api-auth/', include('rest_framework.urls', namespace='rest_framework'))
+]
+
+
+
 """backend_bistro URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,11 +33,11 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import include, path
+# from django.contrib import admin
+# from django.urls import include, path
 
 
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('menu/',include('menuitems.urls')),
-]
+# urlpatterns = [
+#     path('admin/', admin.site.urls),
+#     path('menu/',include('menuitems.urls')),
+# ]

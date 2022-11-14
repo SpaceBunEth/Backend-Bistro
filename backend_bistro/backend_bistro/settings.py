@@ -36,6 +36,10 @@ CORS_ALLOWED_ORIGIN_REGEXES = [
 
 # Application definition
 
+# REST_FRAMEWORK = {
+
+# }
+
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
@@ -45,6 +49,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'menuitems',
     'corsheaders',
+    'rest_framework',
 ]
 
 MIDDLEWARE = [
